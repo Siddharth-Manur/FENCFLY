@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ALD.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid rgb(255, 255, 255);
+    }
+</style>
+<button class="add-new-button" onclick="addNewRow()">Add New</button>
+<body>
+    <table id="myTable">
+        <tr>
+            <th>Police</th>
+            <th>Contact</th>
+            <th>Region</th>
+            <th>tag_id</th>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>8576682297</td>
+            <td>
+                <select name="dog-names" id="dog-names">
+                    <option value="REVA">REVA</option>
+                    <option value="LAKE">PALACE</option>
+                </select>
+            </td>
+            <td><input type="text" name="" id=""></td>
+        </tr>
+        <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>5496729493</td>
+            <td>
+                <select name="dog-names" id="dog-names">
+                    <option value="REVA">REVA</option>
+                    <option value="LAKE">PALACE</option>
+                </select>
+            </td>
+            <td><input type="text" name="" id=""></td>
+        </tr>
+    </table>
+
+    
+
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.7342358650694!2d77.63285725138432!3d13.116015373575298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae19721a651fd3%3A0xdee225fe28f600f6!2sREVA%20University!5e0!3m2!1sen!2sin!4v1680159904927!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <script>
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
+
+        function showPosition(position) {
+            console.log("Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude);
+        }
+
+        function addNewRow() {
+            var table = document.getElementById("myTable");
+
+            var newRow = document.createElement("tr");
+
+            var policeCell = document.createElement("td");
+            var contactCell = document.createElement("td");
+            var regionCell = document.createElement("td");
+            var tagIdCell = document.createElement("td");
+
+            var police = prompt("Enter Police:");
+            var contact = prompt("Enter Contact:");
+
+            policeCell.textContent = police;
+            contactCell.textContent = contact;
+            regionCell.innerHTML = "<select name='dog-names' id='dog-names'><option value='REVA'>REVA</option><option value='PALACE'>PALACE</option></select>";
+            tagIdCell.innerHTML = "<input type='text' name='' id=''>";
+
+            newRow.appendChild(policeCell);
+            newRow.appendChild(contactCell);
+            newRow.appendChild(regionCell);
+            newRow.appendChild(tagIdCell);
+
+            table.appendChild(newRow);
+        }
+    </script>
+</body>
+
+</html>

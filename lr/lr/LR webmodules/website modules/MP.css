@@ -1,0 +1,17 @@
+body {
+    background-color: #333435;
+    margin-top: 100px;
+    margin-left: 300px;
+    animation: slideIn 1s ease-in;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

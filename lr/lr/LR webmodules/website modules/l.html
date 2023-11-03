@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="l.css">
+    <title>Document</title>
+    <style>
+        /* CSS styles here */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="add-new" onclick="addNewRow()">Add New Plan</button>
+        <table id="myTable">
+            <tr>
+                <th>LOCATION</th>
+                <th>ACTIONS</th>
+            </tr>
+            <tr>
+                <td>REVA</td>
+                <td>
+                    <button><a href="#">Monitor Location</a></button>
+                    <button onclick="deleteRow(this.parentNode.parentNode)">Delete Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>PALACE</td>
+                <td>
+                    <button><a href="#">Monitor Location</a></button>
+                    <button onclick="deleteRow(this.parentNode.parentNode)">Delete Plan</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function addNewRow() {
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(-1); // Insert a new row at the end of the table
+
+            var cell1 = row.insertCell(0); // Insert cells for the new row
+            var cell2 = row.insertCell(1);
+
+            var location = prompt("Enter location:");
+
+            cell1.innerHTML = location; // Set the content of the cells
+            cell2.innerHTML =
+                '<button><a href="#">Monitor Location</a></button> <button onclick="deleteRow(this.parentNode.parentNode)">Delete Plan</button>';
+        }
+
+        function deleteRow(row) {
+            var table = document.getElementById("myTable");
+            var rowIndex = row.rowIndex;
+            table.deleteRow(rowIndex);
+        }
+    </script>
+</body>
+
+</html>

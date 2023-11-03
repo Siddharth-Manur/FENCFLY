@@ -1,0 +1,80 @@
+/* PD.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #333435;
+  margin: 0;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  background-color: #fff;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+.add-new-button {
+  margin-bottom: 10px;
+  background-color: #bd7113;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button {
+  background-color: #bd7113;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #d97e1d;
+}
+
+/* Flexbox Animations */
+
+.add-new-button {
+  display: inline-block;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.add-new-button:hover {
+  transform: scale(1.05);
+}
+
+.delete-button {
+  display: inline-block;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.delete-button:hover {
+  transform: scale(1.05);
+}
